@@ -1,0 +1,43 @@
+﻿<div class="container fullsize">
+    <div class="row form-inline">
+        <input class="form-control" type="text" ng-enter="Refresh()" placeholder="Search by patient name or Id" ng-model="SearchCriteria.SearchText" />
+        <button class="btn btn-primary" style="width: 70px" ng-click="Refresh()">Go</button>
+    </div>
+
+    <div class="row fullsize">
+        <h2>Patients List:</h2>
+        <div id="overlay" style="height: 50%;align-content: center" ng-if="Loading()">
+            <h3>Loading...</h3>
+            <img src="/Content/Images/loading.gif"/>
+        </div>
+        <div style="overflow-y: scroll; height: 50%">
+            <table ng-if="!Loading()">
+                <colgroup>
+                    <col span="1" style="width: 10%;">
+                    <col span="3" style="width: 25%;">
+                    <col span="2" style="width: 10%;">
+                </colgroup>
+                <tr>
+                    <th>Patient Id</th>
+                    <th>First Name</th>
+                    <th>Surname</th>
+                    <th>DOB</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="patient in GetList()">
+                    <td>{{patient.Id}}</td>
+                    <td>{{patient.Firstname}}</td>
+                    <td>{{patient.Surname}}</td>
+                    <td>{{patient.DateOfBirth | date}}</td>
+                    <td><button class="btn btn-primary" ng-click="onEditRequested(patient.Id)">Edit</button></td>
+                    <td><button class="btn btn-info" ng-click="onDetailsViewRequested(patient.Id)">Show Details</button></td>
+                </tr>
+            </table>
+        </div>
+        <div class="row" ng-if="!Loading()">
+            <pagination total-items=" GetTotalItems()" max-size="10" ng-model="PaginationInfo.CurrentPage" ng-change="Refresh()">
+            </pagination>
+        </div>
+    </div>
+</div>

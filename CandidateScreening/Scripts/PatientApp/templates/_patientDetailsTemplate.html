@@ -1,0 +1,89 @@
+﻿<form novalidate name="patientForm">
+    <div class="row">
+        <h2 class="label-info">{{title}}</h2>
+    </div> 
+    <div class="panel panel-default">
+        <div class="panel-heading"><b>Patient Information</b></div>
+        <div class="panel-body">
+            <div class="col-sm-12 col-md-6 col-lg-4 controls form-inline">
+                <span>Firstname:</span>
+                <input ng-if="FormStatus.isEditable" name="firstname" type="text" class="form-control" placeholder="Firstname" ng-model="Patient.Firstname" ng-required="true"/>
+                <span ng-if="!FormStatus.isEditable">{{Patient.Firstname}}</span>
+                <span class="inlineerror" ng-if="FormStatus.addingTried && patientForm.firstname.$error.required">First name is required</span>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 controls form-inline">
+                <span>Surname:</span>
+                <input ng-if="FormStatus.isEditable" name="surname" type="text" class="form-control" placeholder="Surname" ng-model="Patient.Surname" ng-required="true"/>
+                <span ng-if="!FormStatus.isEditable">{{Patient.Surname}}</span>
+                <span class="inlineerror" ng-if="FormStatus.addingTried && patientForm.surname.$error.required">Surname is required</span>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 controls form-inline">
+                <span>DateOfBirth:</span>
+                <input ng-if="FormStatus.isEditable" name="dob" type="date" class="form-control" ng-model="Patient.DateOfBirth" ng-required="true"/>
+                <span ng-if="!FormStatus.isEditable">{{Patient.DateOfBirth | date}}</span>
+                <span class="inlineerror" ng-if="FormStatus.addingTried && patientForm.dob.$error.required">DateOfBirth is required</span>
+            </div>
+            <div class="col-sm-12 col-md-6  col-lg-4 controls form-inline">
+                <span>Gender:</span>
+                <select ng-if="FormStatus.isEditable" name="gender" class="form-control" ng-model="Patient.Gender" ng-required="true">
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+                <span ng-if="!FormStatus.isEditable">{{(Patient.Gender==='M'?'Male':'Female')}}</span>
+                <span class="inlineerror" ng-if="FormStatus.addingTried && patientForm.gender.$error.required">Gender is required</span>
+            </div>
+            <div class="col-sm-12 col-md-6  col-lg-4 controls form-inline">
+                <span>Email:</span>
+                <input ng-if="FormStatus.isEditable" type="text" class="form-control" placeholder="Email" ng-model="Patient.Email"/>
+                <span ng-if="!FormStatus.isEditable">{{Patient.Email}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div ng-repeat="address in Patient.Addresses" class="panel panel-default">
+        <div class="panel-heading" ng-if="!address.AddressType"><b>Residential Address</b></div>
+        <div class="panel-heading" ng-if="address.AddressType"><b>Postal Address</b></div>
+        <div class="panel-body">
+            <div class="col-sm-12 col-md-6 col-lg-4 controls form-inline">
+                <span>Street Number:</span>
+                <input ng-if="FormStatus.isEditable" type="text" class="form-control" placeholder="Street Number" ng-model="address.StreetNumber"/>
+                <span ng-if="!FormStatus.isEditable">{{address.StreetNumber}}</span>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 controls form-inline">
+                <span>Line1:</span>
+                <input ng-if="FormStatus.isEditable" type="text" class="form-control" placeholder="Line1" ng-model="address.Line1"/>
+                <span ng-if="!FormStatus.isEditable">{{address.Line1}}</span>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 controls form-inline">
+                <span>PostCode:</span>
+                <input ng-if="FormStatus.isEditable" type="text" class="form-control" placeholder="PostCode" ng-model="address.PostCode"/>
+                <span ng-if="!FormStatus.isEditable">{{address.PostCode}}</span>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 controls form-inline">
+                <span>Suburb:</span>
+                <input ng-if="FormStatus.isEditable" type="text" class="form-control" placeholder="Suburb" ng-model="address.Suburb"/>
+                <span ng-if="!FormStatus.isEditable">{{address.Suburb}}</span>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 controls form-inline">
+                <span>Country:</span>
+                <input ng-if="FormStatus.isEditable" type="text" class="form-control" placeholder="Country" ng-model="address.Country"/>
+                <span ng-if="!FormStatus.isEditable">{{address.Country}}</span>
+            </div>
+            <div class="row">
+                <span ng-if="address.DefaultAddress" class="label label-success">Default Address</span>
+                <button ng-if="!address.DefaultAddress && FormStatus.isEditable" class="btn btn-danger" ng-click="SetDefaultAddress(address)">Set As Default</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <button ng-if="FormStatus.isEditable" class="btn btn-success" ng-click="OK(patientForm)">OK</button>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-default" ng-click="Close()">Close</button>
+        </div>
+
+    </div>
+</form>
+
+

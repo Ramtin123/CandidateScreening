@@ -1,0 +1,15 @@
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\bin\Debug\CandidateScreening.Data.dll.config
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\bin\Debug\CandidateScreening.Data.dll
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\bin\Debug\CandidateScreening.Data.pdb
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\bin\Debug\EntityFramework.dll
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\bin\Debug\Faker.dll
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\bin\Debug\EntityFramework.xml
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\obj\Debug\CandidateScreening.Data.Migrations.Initial.resources
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\obj\Debug\CandidateScreening.Data.csproj.GenerateResource.Cache
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\obj\Debug\CandidateScreening.Data.dll
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\obj\Debug\CandidateScreening.Data.pdb
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\obj\Debug\CandidateScreening.Data.Migrations.AddingAddressClass.resources
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\obj\Debug\CandidateScreening.Data.csprojResolveAssemblyReference.cache
+C:\Users\Ramtin\Desktop\proj\CandidateScreening\CandidateScreening\CandidateScreening.Data\obj\Debug\CandidateScreening.Data.Migrations.addresslineChange.resources

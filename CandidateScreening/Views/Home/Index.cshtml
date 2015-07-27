@@ -1,0 +1,20 @@
+﻿@model CandidateScreening.Models.IndexModel
+
+@{
+    ViewBag.Title = "Patients Database";
+}
+
+
+<div class="container fullsize" ng-controller="maincontroller as vm">
+    <div ng-if="vm.currentState==vm.statusList.ListMode" class="row" style="min-height: 100px;margin-top: 20px">
+        <button class="btn btn-success" ng-click="vm.changeState(vm.statusList.AddMode)">Add Patients</button>
+    </div>
+    <div class="row fullsize">
+        <div class="fullsize" ng-if="vm.currentState==vm.statusList.AddMode" patient-details-directive view-mode="vm.statusList.AddMode" title="Add Form" on-changed="vm.addPatientHandler" on-closed="vm.getBackToListHandler"></div>
+        <div class="fullsize" ng-if="vm.currentState==vm.statusList.EditMode" patient-details-directive view-mode="vm.statusList.EditMode" title="Edit Form" patientid="vm.patientInfo.currentPatientId" on-changed="vm.editPatientHandler" on-closed="vm.getBackToListHandler"></div>
+        <div class="fullsize" ng-if="vm.currentState==vm.statusList.DetailsViewMode" patient-details-directive view-mode="vm.statusList.DetailsViewMode" title="View Details" patientid="vm.patientInfo.currentPatientId" on-closed="vm.getBackToListHandler"></div>
+        <div class="fullsize" ng-if="vm.currentState==vm.statusList.ListMode" patient-list-directive on-details-view-requested="vm.detailsShowHandler" on-edit-requested="vm.editShowHandler"></div>
+
+    </div>
+</div>
+
